@@ -23,6 +23,7 @@ jobs:
       issues: write
     uses: NCKU-custos/custos-infra/.github/workflows/claude-triage-comment.yml@main
     secrets:
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
 
   draft:
@@ -39,6 +40,7 @@ jobs:
       bot_name: custos-triage-bot[bot]
       bot_id: ""   # TODO: set to the custos-triage-bot App bot user-id once the App is created
     secrets:
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       CUSTOS_TRIAGE_APP_ID: ${{ secrets.CUSTOS_TRIAGE_APP_ID }}
       CUSTOS_TRIAGE_PRIVATE_KEY: ${{ secrets.CUSTOS_TRIAGE_PRIVATE_KEY }}
